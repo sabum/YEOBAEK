@@ -2,7 +2,7 @@
 
 > 채우지 않음의 미학. 가장 한국적인 것이 가장 세계적인 것.
 
-**[사이트 바로가기](https://sabum.github.io/YEOBAEK/site/)**
+**[사이트 바로가기](https://sabum.github.io/YEOBAEK/)**
 
 ---
 
