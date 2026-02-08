@@ -1,3 +1,4 @@
 .DS_Store
 *.pdf
 site/mov/
+!site/mov/web/yeobaek_03_loop.mp4
