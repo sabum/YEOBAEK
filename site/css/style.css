@@ -129,13 +129,13 @@ img {
 /* ===== Reveal Animation ===== */
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity var(--transition-slow), transform var(--transition-slow);
+    filter: blur(8px);
+    transition: opacity var(--transition-slow), filter var(--transition-slow);
 }
 
 .reveal.visible {
     opacity: 1;
-    transform: translateY(0);
+    filter: blur(0px);
 }
 
 /* ===== Image / Video Placeholder ===== */
@@ -235,7 +235,7 @@ img {
     color: rgba(58, 58, 58, 0.5);
     letter-spacing: 2px;
     opacity: 0;
-    animation: fadeUp 1.2s ease 0.9s forwards;
+    animation: blurIn 1.2s ease 0.9s forwards;
 }
 
 .hero-scroll {
@@ -270,6 +270,11 @@ img {
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blurIn {
+    from { opacity: 0; filter: blur(8px); }
+    to { opacity: 1; filter: blur(0px); }
 }
 
 @keyframes scrollLine {
@@ -897,13 +902,13 @@ img {
 .g-char {
     display: inline-block;
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    filter: blur(6px);
+    transition: opacity 0.6s ease, filter 0.8s ease;
 }
 
 .g-chars-animated .g-char {
     opacity: 1;
-    transform: translateY(0);
+    filter: blur(0px);
     transition-delay: calc(var(--i) * 0.04s);
 }
 
