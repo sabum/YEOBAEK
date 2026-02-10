@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YEOBAEK — 여백</title>
     <meta name="description" content="채우지 않음의 미학. 가장 한국적인 것이 가장 세계적인 것. YEOBAEK 프리미엄 니치 향수.">
 
+    <!-- OG & Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="YEOBAEK — 여백">
+    <meta property="og:description" content="채우지 않음의 미학. The Scent of Deep Silence.">
+    <meta property="og:url" content="https://sabum.github.io/YEOBAEK/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Theme & Favicon -->
+    <meta name="theme-color" content="#FAF8F5">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='none' stroke='%23C4A882' stroke-width='3'/></svg>">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Cormorant:wght@300;400&family=Playfair+Display:wght@300;400&family=Noto+Serif+KR:wght@200;300;400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Cormorant:wght@300;400&family=Playfair+Display:wght@300;400&family=Noto+Serif+KR:wght@200;300;400&display=swap"
+        rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <a href="#" class="nav-logo">Yeobaek</a>
-        <div class="nav-links">
+        <button class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기">
+            <span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
             <a href="#philosophy" class="nav-link" data-section="philosophy">Philosophy</a>
             <a href="#collection" class="nav-link" data-section="collection">Collection</a>
             <a href="#craft" class="nav-link" data-section="craft">Craft</a>
@@ -113,8 +132,8 @@
         <!-- Moon Soil -->
         <article class="scent-card reveal" data-scent="moon-soil">
             <div class="scent-visual">
-                <video class="scent-video" autoplay muted loop playsinline>
-                    <source src="mov/___1080p_202601191905.mp4" type="video/mp4">
+                <video class="scent-video" muted loop playsinline data-lazy>
+                    <source data-src="mov/___1080p_202601191905.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="scent-info">
@@ -135,8 +154,8 @@
         <!-- Kiln Breath -->
         <article class="scent-card reveal" data-scent="kiln-breath">
             <div class="scent-visual">
-                <video class="scent-video" autoplay muted loop playsinline>
-                    <source src="mov/___1080p_202601191923.mp4" type="video/mp4">
+                <video class="scent-video" muted loop playsinline data-lazy>
+                    <source data-src="mov/___1080p_202601191923.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="scent-info">
@@ -157,8 +176,8 @@
         <!-- Void Air -->
         <article class="scent-card reveal" data-scent="void-air">
             <div class="scent-visual">
-                <video class="scent-video" autoplay muted loop playsinline>
-                    <source src="mov/___1080p_202601191910.mp4" type="video/mp4">
+                <video class="scent-video" muted loop playsinline data-lazy>
+                    <source data-src="mov/___1080p_202601191910.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="scent-info">
@@ -204,7 +223,7 @@
         <div class="craft-concepts">
             <div class="concept-card reveal">
                 <div class="concept-image">
-                    <!-- 보틀 이미지 placeholder -->
+                    <img src="img/products/bottle_silhouette.png" alt="The Silhouette — 투명 유리 향수병" loading="lazy">
                 </div>
                 <div class="concept-text">
                     <span class="concept-num">Concept 01</span>
@@ -215,7 +234,7 @@
             </div>
             <div class="concept-card reveal">
                 <div class="concept-image">
-                    <!-- 보틀 이미지 placeholder -->
+                    <img src="img/products/bottle_material.png" alt="The Material — 세라믹 도자기 향수병" loading="lazy">
                 </div>
                 <div class="concept-text">
                     <span class="concept-num">Concept 02</span>
@@ -226,7 +245,7 @@
             </div>
             <div class="concept-card reveal">
                 <div class="concept-image">
-                    <!-- 보틀 이미지 placeholder -->
+                    <img src="img/products/bottle_fragment.png" alt="The Fragment — 깨진 도자기 영감 향수병" loading="lazy">
                 </div>
                 <div class="concept-text">
                     <span class="concept-num">Concept 03</span>
@@ -240,7 +259,7 @@
         <!-- Unboxing Ritual -->
         <div class="unboxing reveal">
             <div class="unboxing-image">
-                <!-- 패키지 이미지 placeholder -->
+                <img src="img/products/unboxing.png" alt="언박싱 리추얼 — 프리미엄 패키지" loading="lazy">
             </div>
             <div class="unboxing-content">
                 <h3 class="unboxing-title">Unboxing Ritual</h3>
@@ -266,6 +285,7 @@
     <!-- ===== SPACE ===== -->
     <section class="section section-space" id="space">
         <div class="space-hero reveal">
+            <img class="space-hero-img" src="img/space/chamber.png" alt="Chamber of Void — 사유의 방" loading="lazy">
             <p class="section-label">Chamber of Void</p>
             <p class="space-title-kr">사유의 방</p>
         </div>
@@ -317,4 +337,5 @@
     <!-- Scripts -->
     <script src="js/main.js"></script>
 </body>
+
 </html>

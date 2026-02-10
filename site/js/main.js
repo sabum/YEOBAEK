@@ -76,6 +76,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ===== Mobile Hamburger Menu =====
+    const hamburger = document.getElementById('navHamburger');
+    const navLinksWrap = document.getElementById('navLinks');
+
+    if (hamburger && navLinksWrap) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinksWrap.classList.toggle('active');
+            document.body.style.overflow = navLinksWrap.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close menu on link click
+        navLinksWrap.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinksWrap.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
     // ===== Smooth Scroll for Anchor Links =====
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
@@ -93,6 +114,31 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // ===== Lazy Video Loading =====
+    const lazyVideos = document.querySelectorAll('video[data-lazy]');
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+                // Load and play
+                if (!video.dataset.loaded) {
+                    const source = video.querySelector('source[data-src]');
+                    if (source) {
+                        source.src = source.dataset.src;
+                        source.removeAttribute('data-src');
+                        video.load();
+                    }
+                    video.dataset.loaded = 'true';
+                }
+                video.play().catch(() => { });
+            } else {
+                video.pause();
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '200px 0px' });
+
+    lazyVideos.forEach(v => videoObserver.observe(v));
 
     // ===== Character Splitting for Typography Animation =====
     document.querySelectorAll('[data-chars]').forEach(el => {
